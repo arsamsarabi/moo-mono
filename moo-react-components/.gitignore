@@ -104,5 +104,6 @@ dist
 .tern-port
 
 # moo-react-components
+.DS_Store
 lib
 build
