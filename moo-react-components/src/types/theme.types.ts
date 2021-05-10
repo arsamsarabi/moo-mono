@@ -19,7 +19,7 @@ export type MeasurementsType = {
 
 export type TypographyType = {
   fontFamily: string;
-  fontSize: string;
+  fontSize: number;
 };
 
 export type ThemeType = {

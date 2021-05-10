@@ -13,5 +13,5 @@ export const typography: TypographyType = {
     '"Segoe UI Emoji"',
     '"Segoe UI Symbol"',
   ].join(','),
-  fontSize: '18px',
+  fontSize: 18,
 };
