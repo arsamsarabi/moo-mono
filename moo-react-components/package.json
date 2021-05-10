@@ -1,0 +1,22 @@
+{
+  "name": "moo-react-components",
+  "version": "0.1.0",
+  "description": "Moo React component library ",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Arsam Sarabi",
+    "email": "arsamsarabi@me.com",
+    "url": "https://github.com/arsamsarabi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arsamsarabi/moo-mono.git"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.11.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
+  }
+}
