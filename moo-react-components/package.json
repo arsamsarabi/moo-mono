@@ -4,6 +4,13 @@
   "description": "Moo React component library ",
   "private": true,
   "license": "UNLICENSED",
+  "main": "./build/index.js",
+  "module": "./build/index.es.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "build",
+    "lib"
+  ],
   "author": {
     "name": "Arsam Sarabi",
     "email": "arsamsarabi@me.com",
@@ -12,6 +19,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/arsamsarabi/moo-mono.git"
+  },
+  "scripts": {
+    "build": "rimraf build && rollup -c",
+    "build:lib": "rimraf lib && tsc --p tsconfig.lib.json"
   },
   "peerDependencies": {
     "@material-ui/core": "^4.11.4",
