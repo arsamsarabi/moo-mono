@@ -4,7 +4,7 @@ import { render, fireEvent, cleanup } from '@testing-library/react';
 
 import ProductSelector, { ProductSelectorProps } from './ProductSelector';
 import { ThemeProvider } from '../theme';
-import { mockProducts } from './ProductSelector.stories';
+import { mockProducts } from '../mock/mockProducts';
 
 describe('<ProductSelector />', () => {
   let props: ProductSelectorProps;

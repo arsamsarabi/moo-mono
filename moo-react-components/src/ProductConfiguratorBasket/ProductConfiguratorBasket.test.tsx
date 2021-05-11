@@ -6,7 +6,7 @@ import ProductConfiguratorBasket, {
   ProductConfiguratorBasketProps,
 } from './ProductConfiguratorBasket';
 import { ThemeProvider } from '../theme';
-import { mockProducts } from '../ProductSelector/ProductSelector.stories';
+import { mockProducts } from '../mock/mockProducts';
 import type { SelectedProduct } from '../types';
 
 const calculateTotalPrice = (products: SelectedProduct[]) =>
