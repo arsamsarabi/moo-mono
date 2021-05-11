@@ -236,17 +236,12 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<ProductSelectorProps> = ({
-  productTypeLabel,
-  products,
-}) => {
-  return (
-    <ProductSelector productTypeLabel={productTypeLabel} products={products} />
-  );
+const Template: Story<ProductSelectorProps> = ({ productName, products }) => {
+  return <ProductSelector productName={productName} products={products} />;
 };
 
 export const Example = Template.bind({});
 Example.args = {
-  productTypeLabel: 'Hardcover Notebooks',
   products: mockProducts,
+  productName: 'Hardcover Notebook',
 };

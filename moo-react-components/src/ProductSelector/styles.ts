@@ -1,7 +1,27 @@
 import styled, { css } from 'styled-components';
 
 import type { WithTheme } from '../types';
+import { TOTAL_PRICE_HEIGHT } from '../ProductConfiguratorTotalPrice/styles';
 
-export const NoticeContainer = styled.div<WithTheme>(({ theme }) => {
-  return css``;
+export const Wrapper = styled.div<WithTheme>(({ theme: { measurements } }) => {
+  return css`
+    padding-bottom: calc(${TOTAL_PRICE_HEIGHT}px + ${measurements.small});
+  `;
 });
+export const AlertWraper = styled.div<WithTheme>(
+  ({ theme: { measurements, palette } }) => {
+    return css`
+      background-color: ${palette.brand};
+      padding: ${measurements.small};
+      margin: ${measurements.small} 0;
+      border-radius: 4px;
+    `;
+  },
+);
+export const ConfirmationAlert = styled.p<WithTheme>(
+  ({ theme: { palette } }) => {
+    return css`
+      color: ${palette.common.white};
+    `;
+  },
+);
