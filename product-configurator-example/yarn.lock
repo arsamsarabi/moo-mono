@@ -1269,9 +1269,13 @@ minimist@^1.2.0:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
-"moo-react-components@file:../moo-react-components/moo-react-components-v0.1.0.tgz":
-  version "0.1.0"
-  resolved "file:../moo-react-components/moo-react-components-v0.1.0.tgz#a9495d8e0f1731eae014720a0f69c52fe55dede6"
+"moo-react-components@file:../moo-react-components/moo-react-components-v0.1.7.tgz":
+  version "0.1.7"
+  resolved "file:../moo-react-components/moo-react-components-v0.1.7.tgz#e409264e1c90aae8baba94439c4edb6f0daf81a6"
+
+"moo-react-components@file:../moo-react-components/moo-react-components-v0.1.8.tgz":
+  version "0.1.8"
+  resolved "file:../moo-react-components/moo-react-components-v0.1.8.tgz#d941107badada333b78fdcfdd94d5258ad20eb5a"
 
 ms@2.0.0:
   version "2.0.0"

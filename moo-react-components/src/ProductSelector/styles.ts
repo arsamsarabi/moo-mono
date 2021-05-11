@@ -6,6 +6,7 @@ import { devices } from '../theme';
 
 export const Wrapper = styled.div<WithTheme>(({ theme: { measurements } }) => {
   return css`
+    position: relative;
     padding-bottom: calc(${TOTAL_PRICE_HEIGHT}px + ${measurements.small});
 
     @media ${devices.largeMobile} {

@@ -14,7 +14,7 @@ export const Wrapper = styled.div<WrapperProps>(
     return css`
       width: 100%;
       height: ${TOTAL_PRICE_HEIGHT}px;
-      position: fixed;
+      position: absolute;
       bottom: 0;
       left: 0;
       background-color: ${palette.brand};
