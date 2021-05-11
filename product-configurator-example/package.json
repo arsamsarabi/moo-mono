@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
     "lodash.merge": "^4.6.2",
     "moo-react-components": "file:../moo-react-components/moo-react-components-v0.1.0.tgz",
     "next": "10.2.0",

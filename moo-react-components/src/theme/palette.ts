@@ -1,7 +1,6 @@
-import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 import { hsl } from 'polished';
 
-import type { ColorsType } from '../types';
+import type { ColorsType, PaletteType } from '../types';
 
 export const colors: ColorsType = {
   green: { h: 164, s: 1, l: 0.3 },
@@ -15,23 +14,10 @@ export const colors: ColorsType = {
 
 const { green, blue, red, yellow, grey } = colors;
 
-export const palette: PaletteOptions = {
-  primary: {
-    main: hsl(green.h, green.s, green.l),
-  },
-  secondary: {
-    main: hsl(blue.h, blue.s, blue.l),
-  },
-  error: {
-    main: hsl(red.h, red.s, red.l),
-  },
-  warning: {
-    main: hsl(yellow.h, yellow.s, yellow.l),
-  },
-  info: {
-    main: hsl(grey.h, grey.s, grey.l),
-  },
-  success: {
-    main: hsl(green.h, green.s, green.l),
-  },
+export const palette: PaletteType = {
+  brand: hsl(green.h, green.s, green.l),
+  cool: hsl(blue.h, blue.s, blue.l),
+  hot: hsl(red.h, red.s, red.l),
+  warm: hsl(yellow.h, yellow.s, yellow.l),
+  neutral: hsl(grey.h, grey.s, grey.l),
 };

@@ -15,7 +15,7 @@ export const Wrapper = styled.div<WrapperProps>(({ theme, selected }) => {
     justify-content: flex-start;
     align-items: center;
     height: 52px;
-    border: 2px solid ${selected ? palette.primary.main : palette.primary.info};
+    border: 2px solid ${selected ? palette.brand : palette.neutral};
     border-radius: 4px;
     padding: ${measurements.small};
     margin: ${measurements.small} 0;
@@ -43,7 +43,7 @@ export const Icon = styled.p<IconProps>(({ theme, selected }) => {
   return css`
     margin: -${measurements.xsmall} ${measurements.small} 0 0;
     font-size: 32px;
-    color: ${selected ? palette.error.main : palette.success.main};
+    color: ${selected ? palette.hot : palette.brand};
     line-height: 1;
   `;
 });

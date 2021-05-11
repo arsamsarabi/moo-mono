@@ -26,7 +26,7 @@ const reset = css`
 `;
 
 const Button = styled.button<ButtonProps>(
-  ({ theme: { palette, measurements }, color = palette.primary.main }) => {
+  ({ theme: { palette, measurements }, color = palette.brand }) => {
     return css`
       ${reset};
       border: 1px solid ${color};

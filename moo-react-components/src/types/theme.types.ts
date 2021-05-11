@@ -1,5 +1,3 @@
-import { PaletteOptions } from '@material-ui/core/styles/createPalette';
-
 export type HSL = {
   h: number;
   s: number;
@@ -8,6 +6,14 @@ export type HSL = {
 
 export type ColorsType = {
   [key in string]: HSL;
+};
+
+export type PaletteType = {
+  brand: string;
+  cool: string;
+  hot: string;
+  warm: string;
+  neutral: string;
 };
 
 export type MeasurementsType = {
@@ -24,7 +30,7 @@ export type TypographyType = {
 
 export type ThemeType = {
   colors: ColorsType;
-  palette: PaletteOptions;
+  palette: PaletteType;
   measurements: MeasurementsType;
   typography: TypographyType;
 };
