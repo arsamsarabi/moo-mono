@@ -7,6 +7,7 @@ export interface ProductSelectorItemProps {
   price: number;
   selected: boolean;
   onClick(): void;
+  id?: string;
 }
 
 const ProductSelectorItem: FC<ProductSelectorItemProps> = ({
@@ -14,6 +15,7 @@ const ProductSelectorItem: FC<ProductSelectorItemProps> = ({
   price,
   selected,
   onClick,
+  id,
 }) => {
   return (
     <Wrapper
@@ -21,6 +23,7 @@ const ProductSelectorItem: FC<ProductSelectorItemProps> = ({
       onClick={onClick}
       role="button"
       aria-pressed={selected}
+      data-testid={`selector-item-${id}`}
     >
       {/*
         NOTE: 

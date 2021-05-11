@@ -28,7 +28,7 @@ export interface ProductConfiguratorProps {
   handleDiscard(): void;
 }
 
-const DEFAULT_PAPER_TYPES: PaperTypeAttribute[] = [
+export const DEFAULT_PAPER_TYPES: PaperTypeAttribute[] = [
   {
     id: 'pt1',
     type: 'paper-type',
@@ -43,7 +43,7 @@ const DEFAULT_PAPER_TYPES: PaperTypeAttribute[] = [
   },
 ];
 
-const DEFAULT_COLORS: CoverColourAttribute[] = [
+export const DEFAULT_COLORS: CoverColourAttribute[] = [
   {
     id: 'cc1',
     type: 'cover-colour',
@@ -167,7 +167,7 @@ const ProductConfigurator: FC<ProductConfiguratorProps> = ({
   );
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="product-configurator-wrapper">
       <Title>Customize your {productName}</Title>
       <CoverColorSelector
         colors={colors}
@@ -196,7 +196,11 @@ const ProductConfigurator: FC<ProductConfiguratorProps> = ({
         <p>Price: £{price.toFixed(2)}</p>
         <ActionsWrapper>
           <Button onClick={onAddToBasket}>Add to basket</Button>
-          <Button onClick={onDiscard} color={defaultTheme.palette.hot}>
+          <Button
+            data-testid="discard-button"
+            onClick={onDiscard}
+            color={defaultTheme.palette.hot}
+          >
             Discard
           </Button>
         </ActionsWrapper>

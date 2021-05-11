@@ -19,7 +19,7 @@ const CoverColorSelector: FC<CoverColorSelectorProps> = ({
     <Wrapper>
       <Title>Cover color:</Title>
       {colors.map((cc: CoverColourAttribute) => (
-        <div key={cc.id}>
+        <div key={cc.id} data-testid={`test-${cc.id}`}>
           <RadioAndLabel
             label={cc.label}
             name="color"

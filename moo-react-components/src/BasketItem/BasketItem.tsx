@@ -14,13 +14,14 @@ const BasketItem: FC<BasketItemProps> = ({ item, onRemoveFromBasket }) => {
   return (
     <Wrapper>
       <div>
-        <p>{item['item-description']}</p>
+        <p data-testid="item-description">{item['item-description']}</p>
       </div>
       <div>
         <p>£{item.price.toFixed(2)}</p>
         <Button
           color={defaultTheme.palette.hot}
           onClick={() => onRemoveFromBasket(item.id)}
+          data-testid="remove-from-basket-button"
         >
           Delete
         </Button>

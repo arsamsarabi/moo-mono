@@ -63,6 +63,7 @@ const ProductSelector: FC<ProductSelectorProps> = ({
         <Button
           onClick={() => setShowConfigurator(true)}
           disabled={showConfigurator}
+          data-testid="create-your-own-button"
         >
           Create your own
         </Button>
@@ -84,6 +85,7 @@ const ProductSelector: FC<ProductSelectorProps> = ({
       {products.map((product: ProductType) => (
         <ProductSelectorItem
           key={product.id}
+          id={product.id}
           description={product['item-description']}
           price={product.price}
           selected={selectedProducts

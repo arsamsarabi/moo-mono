@@ -48,7 +48,8 @@ const Button = styled.button<ButtonProps>(
       background-color: transparent;
       text-align: center;
 
-      &:hover {
+      &:hover,
+      &:focus {
         cursor: pointer;
         background-color: ${inverse ? rgba(color, 0.25) : rgba(color, 0.85)};
         color: ${inverse ? color : palette.common.white};

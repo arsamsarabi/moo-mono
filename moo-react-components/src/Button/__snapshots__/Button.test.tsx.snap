@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Should have disabled styles 1`] = `
+.c0 {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  outline: none;
+  background: transparent;
+  text-align: inherit;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  border: 1px solid hotpink;
+  padding: 4px;
+  color: hotpink;
+  border-radius: 4px;
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+  background-color: transparent;
+  text-align: center;
+  pointer-events: none;
+  background-color: rgba(5,73,92,0.5);
+  color: rgba(245,246,250,0.5);
+  border-color: rgba(245,246,250,0.5);
+}
+
+.c0:hover,
+.c0:focus {
+  cursor: pointer;
+  background-color: rgba(255,105,180,0.85);
+  color: #f5f6fa;
+}
+
+<div>
+  <button
+    class="c0"
+    color="hotpink"
+    data-testid="button-component"
+    disabled=""
+  />
+</div>
+`;
+
+exports[`<Button /> Should match snapshot 1`] = `
+.c0 {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  outline: none;
+  background: transparent;
+  text-align: inherit;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  border: 1px solid hotpink;
+  padding: 4px;
+  color: hotpink;
+  border-radius: 4px;
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+  background-color: transparent;
+  text-align: center;
+}
+
+.c0:hover,
+.c0:focus {
+  cursor: pointer;
+  background-color: rgba(255,105,180,0.85);
+  color: #f5f6fa;
+}
+
+<div>
+  <button
+    class="c0"
+    color="hotpink"
+    data-testid="button-component"
+  />
+</div>
+`;

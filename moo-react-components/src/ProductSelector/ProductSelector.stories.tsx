@@ -5,7 +5,7 @@ import ProductSelector, { ProductSelectorProps } from './ProductSelector';
 import type { ProductType } from '../types';
 import { ThemeProvider } from '../theme';
 
-const mockProducts: ProductType[] = [
+export const mockProducts: ProductType[] = [
   {
     id: '1',
     'product-group-label': 'Hardcover Notebook',

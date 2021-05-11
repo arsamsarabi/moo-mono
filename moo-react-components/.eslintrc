@@ -19,13 +19,21 @@
   "extends": [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:jest-dom/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "plugins": ["react", "@typescript-eslint", "jsx-a11y", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "jsx-a11y",
+    "testing-library",
+    "jest-dom",
+    "prettier"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "indent": ["error", 2],

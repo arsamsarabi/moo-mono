@@ -48,7 +48,7 @@ const ProductConfiguratorBasket: FC<ProductConfiguratorBasketProps> = ({
       <Header fullPage={isCheckout}>
         <TotalPriceWrapper fullPage={isCheckout}>
           <p>Total price:</p>
-          <p>£{totalPrice.toFixed(2)}</p>
+          <p data-testid="total-price-figure">£{totalPrice.toFixed(2)}</p>
         </TotalPriceWrapper>
         <ActionsWrapper fullPage={isCheckout}>
           {isCheckout ? (

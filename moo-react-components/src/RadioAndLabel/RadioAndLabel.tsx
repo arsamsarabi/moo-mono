@@ -18,7 +18,7 @@ const RadioAndLabel: FC<RadioAndLabelProps> = ({
   onChange,
 }) => {
   return (
-    <Label>
+    <Label data-testid="radio-input-label">
       <Input
         type="radio"
         name={name}
@@ -26,7 +26,7 @@ const RadioAndLabel: FC<RadioAndLabelProps> = ({
         checked={selected}
         onChange={() => onChange(value)}
       />
-      {label}
+      <span data-testid="radio-label-text">{label}</span>
     </Label>
   );
 };

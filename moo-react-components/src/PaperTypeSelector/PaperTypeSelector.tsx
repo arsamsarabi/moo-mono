@@ -19,7 +19,7 @@ const PaperTypeSelector: FC<PaperTypeSelectorProps> = ({
     <Wrapper>
       <Title>Paper type:</Title>
       {paperTypes.map((pt: PaperTypeAttribute) => (
-        <div key={pt.id}>
+        <div key={pt.id} data-testid={`test-${pt.id}`}>
           <RadioAndLabel
             label={pt.label}
             name="paper type"

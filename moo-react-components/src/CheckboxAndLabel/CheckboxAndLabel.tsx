@@ -24,8 +24,9 @@ const CheckboxAndLabel: FC<CheckboxAndLabelProps> = ({
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           onChange(e.target.checked);
         }}
+        data-testid="checkbox-input"
       />
-      {label}
+      <span data-testid="label-text">{label}</span>
     </Label>
   );
 };
