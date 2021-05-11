@@ -10,7 +10,7 @@ interface WrapperProps extends WithTheme {
 }
 
 export const Wrapper = styled.div<WrapperProps>(
-  ({ theme: { palette, measurements }, fullPage }) => {
+  ({ theme: { palette }, fullPage }) => {
     return css`
       width: 100%;
       height: ${TOTAL_PRICE_HEIGHT}px;
@@ -32,7 +32,7 @@ export const Wrapper = styled.div<WrapperProps>(
 );
 
 export const Header = styled.div<WrapperProps>(
-  ({ theme: { palette, measurements }, fullPage }) => {
+  ({ theme: { measurements }, fullPage }) => {
     return css`
       display: flex;
       flex-direction: row;
@@ -87,7 +87,7 @@ export const TotalPriceWrapper = styled.div<WrapperProps>(
 );
 
 export const ActionsWrapper = styled.div<WrapperProps>(
-  ({ theme: { palette, measurements }, fullPage }) => {
+  ({ theme: { measurements }, fullPage }) => {
     return css`
       display: flex;
       ${fullPage &&
@@ -128,7 +128,7 @@ export const ActionsWrapper = styled.div<WrapperProps>(
 );
 
 export const BasketItemsWrapper = styled.div<WithTheme>(
-  ({ theme: { palette, measurements } }) => {
+  ({ theme: { measurements } }) => {
     return css`
       padding: ${measurements.small};
 
