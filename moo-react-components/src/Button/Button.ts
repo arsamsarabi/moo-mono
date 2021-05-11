@@ -1,14 +1,7 @@
 import styled, { css } from 'styled-components';
-import { rgba, hsl } from 'polished';
+import { rgba } from 'polished';
 
 import type { WithTheme } from '../types';
-import { colors } from '../theme';
-
-const { white } = colors;
-
-export interface ButtonProps extends WithTheme {
-  color?: string;
-}
 
 const reset = css`
   border: none;
@@ -25,8 +18,24 @@ const reset = css`
   line-height: normal;
 `;
 
+const disabledStyles = css`
+  cursor: default;
+  pointer-events: none;
+`;
+
+export interface ButtonProps extends WithTheme {
+  color?: string;
+  inverse?: boolean;
+  disabled?: boolean;
+}
+
 const Button = styled.button<ButtonProps>(
-  ({ theme: { palette, measurements }, color = palette.brand }) => {
+  ({
+    theme: { palette, measurements },
+    color = palette.brand,
+    inverse = false,
+    disabled = false,
+  }) => {
     return css`
       ${reset};
       border: 1px solid ${color};
@@ -34,12 +43,15 @@ const Button = styled.button<ButtonProps>(
       color: ${color};
       border-radius: 4px;
       transition: 0.2s all linear;
+      background-color: transparent;
 
       &:hover {
         cursor: pointer;
-        background-color: ${rgba(color, 0.75)};
-        color: ${hsl(white.h, white.s, white.l)};
+        background-color: ${inverse ? rgba(color, 0.25) : rgba(color, 0.85)};
+        color: ${inverse ? color : palette.common.white};
       }
+
+      ${disabled ? disabledStyles : ''}
     `;
   },
 );
