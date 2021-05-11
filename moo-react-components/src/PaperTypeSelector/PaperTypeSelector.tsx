@@ -4,7 +4,7 @@ import { Wrapper, Title } from './styles';
 import type { PaperTypeAttribute } from '../types';
 import RadioAndLabel from '../RadioAndLabel/RadioAndLabel';
 
-interface PaperTypeSelectorProps {
+export interface PaperTypeSelectorProps {
   paperTypes?: PaperTypeAttribute[];
   selectedType: string;
   onChange(colorId: string): void;

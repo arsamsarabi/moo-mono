@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import { defaultTheme } from '../theme';
 import { Wrapper } from './styles';
 
-interface BasketItemProps {
+export interface BasketItemProps {
   item: SelectedProduct;
   onRemoveFromBasket(id: string): void;
 }

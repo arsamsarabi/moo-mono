@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import CheckboxAndLabel from '../CheckboxAndLabel/CheckboxAndLabel';
 import { Wrapper } from './styles';
 
-interface SlipcaseSelectorProps {
+export interface SlipcaseSelectorProps {
   selected: boolean;
   onChange(value: boolean): void;
 }

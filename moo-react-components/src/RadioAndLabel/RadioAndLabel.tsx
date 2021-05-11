@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { Label, Input } from './styles';
 
-interface RadioAndLabelProps {
+export interface RadioAndLabelProps {
   label: string;
   name: string;
   value: string;

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { Label, Input } from './styles';
 
-interface CheckboxAndLabelProps {
+export interface CheckboxAndLabelProps {
   name: string;
   checked: boolean;
   onChange(checked: boolean): void;

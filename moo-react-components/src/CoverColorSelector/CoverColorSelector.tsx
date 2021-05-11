@@ -4,7 +4,7 @@ import { Wrapper, Title } from './styles';
 import type { CoverColourAttribute } from '../types';
 import RadioAndLabel from '../RadioAndLabel/RadioAndLabel';
 
-interface CoverColorSelectorProps {
+export interface CoverColorSelectorProps {
   colors: CoverColourAttribute[];
   selectedColor: string;
   onChange(colorId: string): void;

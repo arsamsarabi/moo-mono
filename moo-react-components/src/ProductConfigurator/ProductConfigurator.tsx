@@ -6,7 +6,7 @@ import type {
   CustomProductType,
 } from '../types';
 import CoverColorSelector from '../CoverColorSelector/CoverColorSelector';
-import PaperTypeSelector from '../PaperTypeSelector /PaperTypeSelector';
+import PaperTypeSelector from '../PaperTypeSelector/PaperTypeSelector';
 import SlipcaseSelector from '../SlipcaseSelector/SlipcaseSelector';
 import Button from '../Button/Button';
 import {
