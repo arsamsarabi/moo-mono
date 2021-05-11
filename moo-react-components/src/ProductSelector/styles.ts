@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import type { WithTheme } from '../types';
-import { TOTAL_PRICE_HEIGHT } from '../ProductConfiguratorTotalPrice/styles';
+import { TOTAL_PRICE_HEIGHT } from '../ProductConfiguratorBasket/styles';
 import { devices } from '../theme';
 
 export const Wrapper = styled.div<WithTheme>(({ theme: { measurements } }) => {

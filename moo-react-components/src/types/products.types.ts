@@ -96,3 +96,5 @@ export type CustomProductType = {
   attributes: Omit<ProductAttributes, 'id'>[];
   price: number;
 };
+
+export type SelectedProduct = ProductType | CustomProductType;

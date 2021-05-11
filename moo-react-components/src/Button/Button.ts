@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
 import type { WithTheme } from '../types';
+import { defaultTheme } from '../theme';
 
 const reset = css`
   border: none;
@@ -19,10 +20,11 @@ const reset = css`
 `;
 
 const disabledStyles = css`
-  cursor: default;
   pointer-events: none;
+  background-color: ${rgba(defaultTheme.palette.common.black, 0.5)};
+  color: ${rgba(defaultTheme.palette.common.white, 0.5)};
+  border-color: ${rgba(defaultTheme.palette.common.white, 0.5)};
 `;
-
 export interface ButtonProps extends WithTheme {
   color?: string;
   inverse?: boolean;
@@ -44,6 +46,7 @@ const Button = styled.button<ButtonProps>(
       border-radius: 4px;
       transition: 0.2s all linear;
       background-color: transparent;
+      text-align: center;
 
       &:hover {
         cursor: pointer;

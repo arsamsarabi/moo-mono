@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 
-import type { ProductType, CustomProductType } from '../types';
+import type { ProductType, CustomProductType, SelectedProduct } from '../types';
 import ProductSelectorItem from '../ProductSelectorItem/ProductSelectorItem';
 import ProductConfigurator from '../ProductConfigurator/ProductConfigurator';
 import ProductConfiguratorBasket from '../ProductConfiguratorBasket/ProductConfiguratorBasket';
@@ -17,7 +17,7 @@ const ProductSelector: FC<ProductSelectorProps> = ({
   productName,
 }) => {
   const [selectedProducts, setSelectedProducts] = useState<
-    Array<ProductType | CustomProductType>
+    Array<SelectedProduct>
   >([]);
   const [showConfigurator, setShowConfigurator] = useState<boolean>(false);
   const [showConfirmationAlert, setShowConfirmationAlert] =
@@ -44,6 +44,12 @@ const ProductSelector: FC<ProductSelectorProps> = ({
     setTimeout(() => {
       setShowConfirmationAlert(false);
     }, 3000);
+  };
+
+  const handleRemoveFromBasket = (id: string) => {
+    setSelectedProducts(
+      selectedProducts.filter((p: ProductType) => p.id !== id),
+    );
   };
 
   const handleDiscard = () => {
@@ -86,7 +92,10 @@ const ProductSelector: FC<ProductSelectorProps> = ({
           onClick={() => handleOnSelectorItemClick(product)}
         />
       ))}
-      <ProductConfiguratorBasket selectedProducts={selectedProducts} />
+      <ProductConfiguratorBasket
+        selectedProducts={selectedProducts}
+        onRemoveFromBasket={handleRemoveFromBasket}
+      />
     </Wrapper>
   );
 };
