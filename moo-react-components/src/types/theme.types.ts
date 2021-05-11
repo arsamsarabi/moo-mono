@@ -28,3 +28,7 @@ export type ThemeType = {
   measurements: MeasurementsType;
   typography: TypographyType;
 };
+
+export type WithTheme = {
+  theme: ThemeType;
+};
