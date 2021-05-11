@@ -90,6 +90,7 @@ export type ProductType = {
 };
 
 export type CustomProductType = {
+  id: string;
   'product-group-label': string;
   'item-description': string;
   attributes: Omit<ProductAttributes, 'id'>[];

@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import type { ProductType, CustomProductType } from '../types';
 import ProductSelectorItem from '../ProductSelectorItem/ProductSelectorItem';
 import ProductConfigurator from '../ProductConfigurator/ProductConfigurator';
-import ProductConfiguratorTotalPrice from '../ProductConfiguratorTotalPrice/ProductConfiguratorTotalPrice';
+import ProductConfiguratorBasket from '../ProductConfiguratorBasket/ProductConfiguratorBasket';
 import Button from '../Button/Button';
 import { Wrapper, AlertWraper, ConfirmationAlert } from './styles';
 
@@ -16,65 +16,39 @@ const ProductSelector: FC<ProductSelectorProps> = ({
   products,
   productName,
 }) => {
-  const [selectedProductIds, setSelectedProductIds] = useState<string[]>([]);
-  const [totalPrice, setTotalPrice] = useState<number>(0);
+  const [selectedProducts, setSelectedProducts] = useState<
+    Array<ProductType | CustomProductType>
+  >([]);
   const [showConfigurator, setShowConfigurator] = useState<boolean>(false);
   const [showConfirmationAlert, setShowConfirmationAlert] =
     useState<boolean>(false);
 
-  const calculateTotal = () => {
-    const total = selectedProductIds.reduce((acc: number, cur: string) => {
-      const price: number = products.find(
-        (p: ProductType) => p.id === cur,
-      ).price;
-      const newTotal = Math.round((acc + price) * 100) / 100;
-      return newTotal;
-    }, 0);
-    setTotalPrice(total);
-  };
-
-  const handleOnSelectorItemClick = (productId: string) => {
-    const isSelected: boolean = selectedProductIds.includes(productId);
-    const { price }: ProductType = products.find(
-      (p: ProductType) => p.id === productId,
-    );
+  const handleOnSelectorItemClick = (product: ProductType) => {
+    const isSelected: boolean = selectedProducts
+      .map((p: ProductType) => p.id)
+      .includes(product.id);
 
     if (isSelected) {
-      setSelectedProductIds(
-        selectedProductIds.filter((id) => id !== productId),
+      setSelectedProducts(
+        selectedProducts.filter((p: ProductType) => p.id !== product.id),
       );
-      const newTotal = Math.round((totalPrice - price) * 100) / 100;
-      setTotalPrice(newTotal);
     } else {
-      setSelectedProductIds([...selectedProductIds, productId]);
-      const newTotal = Math.round((totalPrice + price) * 100) / 100;
-      setTotalPrice(newTotal);
+      setSelectedProducts([...selectedProducts, product]);
     }
   };
 
-  const handleOnCheckout = () => {
-    window.alert('checkout');
-  };
-
   const handleAddToBasket = (customProduct: CustomProductType) => {
-    const newTotal = Math.round((totalPrice + customProduct.price) * 100) / 100;
-    setTotalPrice(newTotal);
+    setSelectedProducts([...selectedProducts, customProduct]);
     setShowConfigurator(false);
     setShowConfirmationAlert(true);
     setTimeout(() => {
       setShowConfirmationAlert(false);
     }, 3000);
-
-    // TODO: add custom product to basket
   };
 
   const handleDiscard = () => {
     setShowConfigurator(false);
   };
-
-  useEffect(() => {
-    calculateTotal();
-  }, []);
 
   return (
     <Wrapper>
@@ -106,14 +80,13 @@ const ProductSelector: FC<ProductSelectorProps> = ({
           key={product.id}
           description={product['item-description']}
           price={product.price}
-          selected={selectedProductIds.includes(product.id)}
-          onClick={() => handleOnSelectorItemClick(product.id)}
+          selected={selectedProducts
+            .map((p: ProductType) => p.id)
+            .includes(product.id)}
+          onClick={() => handleOnSelectorItemClick(product)}
         />
       ))}
-      <ProductConfiguratorTotalPrice
-        totalPrice={totalPrice}
-        onCheckout={handleOnCheckout}
-      />
+      <ProductConfiguratorBasket selectedProducts={selectedProducts} />
     </Wrapper>
   );
 };

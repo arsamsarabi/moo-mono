@@ -1,15 +1,16 @@
 import styled, { css } from 'styled-components';
-import { hsl } from 'polished';
 
 import type { WithTheme } from '../types';
-import { colors } from '../theme';
-
-const { white } = colors;
+import { devices } from '../theme';
 
 export const TOTAL_PRICE_HEIGHT = 48;
 
-export const Wrapper = styled.div<WithTheme>(
-  ({ theme: { palette, measurements } }) => {
+interface WrapperProps extends WithTheme {
+  fullPage: boolean;
+}
+
+export const Wrapper = styled.div<WrapperProps>(
+  ({ theme: { palette, measurements }, fullPage }) => {
     return css`
       width: 100%;
       height: ${TOTAL_PRICE_HEIGHT}px;
@@ -22,9 +23,27 @@ export const Wrapper = styled.div<WithTheme>(
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      transition: 0.2s all linear;
+
+      ${fullPage &&
+      css`
+        height: 100%;
+        align-items: flex-start;
+        background-color: ${palette.common.white};
+      `}
+
+      @media ${devices.largeMobile} {
+        padding: ${measurements.medium};
+      }
 
       & > p {
-        color: ${hsl(white.h, white.s, white.l)};
+        color: ${palette.common.white};
+
+        ${fullPage &&
+        css`
+          color: ${palette.brand};
+        `}
+
         &:first-of-type {
           margin-right: ${measurements.small};
         }

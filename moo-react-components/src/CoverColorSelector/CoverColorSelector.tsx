@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import { Wrapper, Title } from './styles';
 import type { CoverColourAttribute } from '../types';
+import RadioAndLabel from '../RadioAndLabel/RadioAndLabel';
 
 interface CoverColorSelectorProps {
   colors: CoverColourAttribute[];
@@ -19,17 +20,13 @@ const CoverColorSelector: FC<CoverColorSelectorProps> = ({
       <Title>Cover color:</Title>
       {colors.map((cc: CoverColourAttribute) => (
         <div key={cc.id}>
-          <label>
-            <input
-              type="radio"
-              id={cc.id}
-              name="color"
-              value={cc.id}
-              checked={cc.id === selectedColor}
-              onChange={() => onChange(cc.id)}
-            />
-            {cc.label}
-          </label>
+          <RadioAndLabel
+            label={cc.label}
+            name="color"
+            value={cc.id}
+            selected={cc.id === selectedColor}
+            onChange={onChange}
+          />
         </div>
       ))}
     </Wrapper>

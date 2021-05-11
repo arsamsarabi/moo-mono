@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import type { WithTheme } from '../types';
-
+import { devices } from '../theme';
 interface WrapperProps extends WithTheme {
   selected: boolean;
 }
@@ -20,6 +20,10 @@ export const Wrapper = styled.div<WrapperProps>(({ theme, selected }) => {
     padding: ${measurements.small};
     margin: ${measurements.small} 0;
 
+    @media ${devices.largeMobile} {
+      margin: ${measurements.medium} 0;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -29,6 +33,7 @@ export const Wrapper = styled.div<WrapperProps>(({ theme, selected }) => {
     }
     & > p:last-of-type {
       margin-left: auto;
+      margin-right: 0;
     }
   `;
 });
@@ -48,6 +53,14 @@ export const Icon = styled.p<IconProps>(({ theme, selected }) => {
   `;
 });
 
-export const DescriptionText = styled.p`
-  font-size: 14px;
-`;
+export const DescriptionText = styled.p<WithTheme>(
+  ({ theme: { measurements } }) => {
+    return css`
+      font-size: 14px;
+      @media ${devices.largeMobile} {
+        font-size: 16px;
+        margin-right: ${measurements.small};
+      }
+    `;
+  },
+);

@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 
+import CheckboxAndLabel from '../CheckboxAndLabel/CheckboxAndLabel';
 import { Wrapper } from './styles';
 
 interface SlipcaseSelectorProps {
@@ -13,17 +14,12 @@ const SlipcaseSelector: FC<SlipcaseSelectorProps> = ({
 }) => {
   return (
     <Wrapper>
-      <label>
-        <input
-          type="checkbox"
-          name="slipcase"
-          checked={selected}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            onChange(e.target.checked)
-          }
-        />
-        Do you need Slipcase?
-      </label>
+      <CheckboxAndLabel
+        name="slipcase"
+        checked={selected}
+        onChange={onChange}
+        label="Do you need Slipcase?"
+      />
     </Wrapper>
   );
 };

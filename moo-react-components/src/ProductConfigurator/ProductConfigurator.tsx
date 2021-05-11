@@ -134,6 +134,7 @@ const ProductConfigurator: FC<ProductConfiguratorProps> = ({
       slipcase ? 'Slipcase' : 'no Slipcase'
     }`;
     const customProduct: CustomProductType = {
+      id: `${Math.floor(Math.random() * 90) + 10}-${new Date().toISOString()}`,
       'product-group-label': productName,
       'item-description': customProductDescription,
       attributes: [
@@ -180,22 +181,19 @@ const ProductConfigurator: FC<ProductConfiguratorProps> = ({
       />
       <SlipcaseSelector selected={slipcase} onChange={handleOnSlipcaseSelect} />
 
-      <ProductDescriptionText>
-        You have selected a
-        <CoverColorText color={selectedColorObject.value}>
-          {selectedColorObject.label}
-        </CoverColorText>
-        {productName} with
-        <PaperTypeText paperType={selectedPaperTypeObject.value}>
-          {selectedPaperTypeObject.label}
-        </PaperTypeText>
-        and <strong>{slipcase ? 'Slipcase' : 'no Slipcase'}</strong>
-      </ProductDescriptionText>
-
       <Footer>
-        <>
-          <p>Price: £{price.toFixed(2)}</p>
-        </>
+        <ProductDescriptionText>
+          You have selected a
+          <CoverColorText color={selectedColorObject.value}>
+            {selectedColorObject.label}
+          </CoverColorText>
+          {productName} with
+          <PaperTypeText paperType={selectedPaperTypeObject.value}>
+            {selectedPaperTypeObject.label}
+          </PaperTypeText>
+          and <strong>{slipcase ? 'Slipcase' : 'no Slipcase'}</strong>
+        </ProductDescriptionText>
+        <p>Price: £{price.toFixed(2)}</p>
         <ActionsWrapper>
           <Button onClick={onAddToBasket}>Add to basket</Button>
           <Button onClick={onDiscard} color={defaultTheme.palette.hot}>

@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import type { WithTheme } from '../types';
+import { devices } from '../theme';
 
 export const Wrapper = styled.div<WithTheme>(
   ({ theme: { measurements, palette } }) => {
@@ -9,6 +10,10 @@ export const Wrapper = styled.div<WithTheme>(
       padding: ${measurements.small};
       margin: ${measurements.medium} 0;
       border-radius: 4px;
+
+      @media ${devices.largeMobile} {
+        padding: ${measurements.medium};
+      }
     `;
   },
 );
@@ -17,6 +22,9 @@ export const Title = styled.h1<WithTheme>(({ theme: { measurements } }) => {
   return css`
     font-size: 14px;
     margin-bottom: ${measurements.small};
+    @media ${devices.largeMobile} {
+      margin-bottom: ${measurements.medium};
+    }
   `;
 });
 
@@ -52,6 +60,9 @@ export const ActionsWrapper = styled.div<WithTheme>(
       & > button {
         &:first-of-type {
           margin-right: ${measurements.small};
+          @media ${devices.largeMobile} {
+            margin-right: ${measurements.medium};
+          }
         }
       }
     `;
@@ -95,6 +106,7 @@ export const PaperTypeText = styled.span<PaperTypeTextProps>(
 export const ProductDescriptionText = styled.p<WithTheme>(
   ({ theme: { measurements } }) => {
     return css`
+      margin: ${measurements.small} 0;
       & > span {
         margin: 0 ${measurements.xsmall};
       }
