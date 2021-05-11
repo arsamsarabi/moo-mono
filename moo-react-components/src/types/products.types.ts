@@ -19,7 +19,27 @@ type CoverColourBlue = {
   label: 'Ocean';
 };
 
-type CoverColours = CoverColourRed | CoverColourBlue;
+type CoverColourGreen = {
+  value: 'green';
+  label: 'Mint';
+};
+
+type CoverColourYellow = {
+  value: 'yellow';
+  label: 'Sunny day';
+};
+
+type CoverColourBlack = {
+  value: 'black';
+  label: 'Dark night';
+};
+
+type CoverColours =
+  | CoverColourRed
+  | CoverColourBlue
+  | CoverColourGreen
+  | CoverColourYellow
+  | CoverColourBlack;
 
 // PAPER TYPE
 type DottedPaperType = {
@@ -46,9 +66,9 @@ type BaseAttribute = {
   type: AttributeTypes;
 };
 
-type CoverColourAttribute = BaseAttribute & CoverColours;
+export type CoverColourAttribute = BaseAttribute & CoverColours;
 
-type PaperTypeAttribute = BaseAttribute & PaperTypes;
+export type PaperTypeAttribute = BaseAttribute & PaperTypes;
 
 type SlipCaseAttribute = BaseAttribute & SlipCaseType;
 
@@ -66,5 +86,12 @@ export type ProductType = {
   'product-group-id': ProductGroupIDs;
   'item-description': string;
   attributes: ProductAttributes[];
+  price: number;
+};
+
+export type CustomProductType = {
+  'product-group-label': string;
+  'item-description': string;
+  attributes: Omit<ProductAttributes, 'id'>[];
   price: number;
 };

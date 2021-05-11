@@ -14,6 +14,10 @@ export type PaletteType = {
   hot: string;
   warm: string;
   neutral: string;
+  common: {
+    white: string;
+    black: string;
+  };
 };
 
 export type MeasurementsType = {

@@ -12,7 +12,7 @@ export const colors: ColorsType = {
   white: { h: 228, s: 0.33, l: 0.97 },
 };
 
-const { green, blue, red, yellow, grey } = colors;
+const { green, blue, red, yellow, grey, black, white } = colors;
 
 export const palette: PaletteType = {
   brand: hsl(green.h, green.s, green.l),
@@ -20,4 +20,8 @@ export const palette: PaletteType = {
   hot: hsl(red.h, red.s, red.l),
   warm: hsl(yellow.h, yellow.s, yellow.l),
   neutral: hsl(grey.h, grey.s, grey.l),
+  common: {
+    black: hsl(black.h, black.s, black.l),
+    white: hsl(white.h, white.s, white.l),
+  },
 };
