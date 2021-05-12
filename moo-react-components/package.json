@@ -1,6 +1,6 @@
 {
   "name": "moo-react-components",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Moo React component library ",
   "private": true,
   "license": "UNLICENSED",
@@ -30,7 +30,8 @@
     "prettier": "npx prettier --write src",
     "eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "stylelint": "stylelint './src/**/*.ts'",
-    "lint": "yarn stylelint && yarn eslint && yarn prettier"
+    "lint": "yarn stylelint && yarn eslint && yarn prettier",
+    "ready": "yarn build && yarn build:lib && yarn pack"
   },
   "peerDependencies": {
     "lodash.merge": "^4.6.2",
