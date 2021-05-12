@@ -20,6 +20,8 @@ export const Wrapper = styled.div<WrapperProps>(
       background-color: ${palette.brand};
       transition: 0.2s all linear;
       overflow-y: auto;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
 
       ${fullPage &&
       css`

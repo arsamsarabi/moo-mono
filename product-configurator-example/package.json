@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "lodash.merge": "^4.6.2",
-    "moo-react-components": "file:../moo-react-components/moo-react-components-v0.1.9.tgz",
+    "moo-react-components": "file:../moo-react-components/moo-react-components-v0.1.11.tgz",
     "next": "10.2.0",
     "polished": "^4.1.2",
     "react": "17.0.2",
