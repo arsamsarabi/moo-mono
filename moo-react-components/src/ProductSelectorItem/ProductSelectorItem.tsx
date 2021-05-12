@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, KeyboardEvent } from 'react';
 
 import { Wrapper, Icon, DescriptionText } from './styles';
 
@@ -17,6 +17,10 @@ const ProductSelectorItem: FC<ProductSelectorItemProps> = ({
   onClick,
   id,
 }) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
+    event.key === 'Enter' && onClick();
+  };
+
   return (
     <Wrapper
       selected={selected}
@@ -24,6 +28,8 @@ const ProductSelectorItem: FC<ProductSelectorItemProps> = ({
       role="button"
       aria-pressed={selected}
       data-testid={`selector-item-${id}`}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     >
       {/*
         NOTE: 
